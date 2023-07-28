@@ -418,9 +418,11 @@ Resources:
             #!/bin/bash
             yum update -y
             amazon-linux-extras install mate-desktop1.x epel -y
-            yum install chromium -y
+            yum install chromium java-17-amazon-corretto java-17-amazon-corretto-devel -y
             echo PREFERRED=/usr/bin/mate-session > /etc/sysconfig/desktop
             rpm --import https://d1uj6qtbmh3dt5.cloudfront.net/NICE-GPG-KEY
+            wget --output-document /opt/ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.3.2_build/ghidra_10.3.2_PUBLIC_20230711.zip
+            unzip /opt/ghidra.zip
             wget https://d1uj6qtbmh3dt5.cloudfront.net/nice-dcv-el7-x86_64.tgz
             tar -xvzf nice-dcv-el7-x86_64.tgz
             cd nice-dcv-*
